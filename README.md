@@ -8,9 +8,52 @@ A expressão popular "macacos me mordam" possui diversos significados, cada um c
 
 O monitoramento de macacos em campo é um conjunto de técnicas e métodos utilizados para estudar e acompanhar as populações desses animais em seu habitat natural. Essa prática é crucial para a conservação das espécies, fornecendo informações valiosas sobre sua ecologia, comportamento, saúde e status de ameaça. Diversas metodologias podem ser empregadas no monitoramento de macacos, variando de acordo com os objetivos específicos da pesquisa, a espécie-alvo e as características do local de estudo. Dentre as técnicas mais comuns está a realização de censos voltado para a estimativa da abundância e distribuição populacional dos macacos em uma área específica.
 
+![Macacos](/img/macacos.gif "Macacos se movimentando")
+
 O monitoramento de macacos em campo é uma atividade complexa e multifacetada que exige conhecimento especializado, habilidades técnicas e um compromisso com a ética e a conservação. A coleta em campo exige um grande esforço do cientista. Longos dias, expostos ao tempo, caminhando por horas e com muita paciência. Por isto tecnologias avançadas tem um grande potencial de revolucionar a área!
 
 > Google AI Gemini + Drones: Utilização de drones para obter imagens aéreas de macacos e seus habitats, permitindo uma visão mais ampla e detalhada de suas atividades, e Gemini para analisar as imagens!
+
+```
+# Set up the model
+generation_config = {
+  "temperature": 1,
+  "top_p": 0.95,
+  "top_k": 0,
+  "max_output_tokens": 8192,
+}
+
+safety_settings = [
+  {
+    "category": "HARM_CATEGORY_HARASSMENT",
+    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+  {
+    "category": "HARM_CATEGORY_HATE_SPEECH",
+    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+  {
+    "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+  {
+    "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+  },
+]
+
+model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
+                              generation_config=generation_config,
+                              safety_settings=safety_settings)
+```
+
+# Treinamento
+
+![Few shots](/img/slide1.png "Imagens treinamento")
+
+# Teste
+
+![Teste](/img/slide2.png "Imagem teste")
 
 ## Créditos
 
