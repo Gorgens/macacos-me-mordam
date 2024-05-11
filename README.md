@@ -51,9 +51,40 @@ model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
 
 ![Few shots](/img/slide1.png "Imagens treinamento")
 
+```
+prompt_parts = [
+  "imagem: ",
+  genai.upload_file("/content/train/vlcsnap-2024-05-10-21h48m05s650.png"),
+  "macacos: Macacos me mordam, nesta imagem encontrei 4!",
+  "imagem: ",
+  genai.upload_file("/content/train/vlcsnap-2024-05-10-21h48m19s514.png"),
+  "macacos: Macacos me mordam, nesta imagem encontrei 3!",
+  "imagem: ",
+  genai.upload_file("/content/train/vlcsnap-2024-05-10-21h48m45s319.png"),
+  "macacos: Macacos me mordam, nesta imagem encontrei 3!",
+  "imagem: ",
+  genai.upload_file("/content/train/vlcsnap-2024-05-10-21h50m30s363.png"),
+  "macacos: Macacos me mordam, nesta imagem encontrei 3!",
+  "imagem: ",
+  genai.upload_file("/content/train/vlcsnap-2024-05-10-21h53m39s571.png"),
+  "macacos: Macacos me mordam, nesta imagem encontrei 7!",
+  "imagem: ",
+  genai.upload_file("/content/train/vlcsnap-2024-05-10-21h54m11s856.png"),
+  "macacos: Macacos me mordam, nesta imagem encontrei 8!",
+  "imagem: ",
+  genai.upload_file("/content/test/vlcsnap-2024-05-10-21h55m42s301.png"),
+  "macacos: ",
+]
+```
+
 # Teste
 
 ![Teste](/img/slide2.png "Imagem teste")
+
+```
+response = model.generate_content(prompt_parts)
+print(response.text)
+```
 
 ## Créditos
 
