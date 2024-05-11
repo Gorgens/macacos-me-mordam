@@ -86,10 +86,11 @@ response = model.generate_content(prompt_parts)
 print(response.text)
 ```
 
-## Créditos
+# Créditos
 
 Este trabalho só foi possivel graças a:
 
 1. Eric Bastos Gorgens - Prof. do PPGCF/UFVJM
 2. Bárbara Ferreira Santos Vieira - Mestranda PPGCF/UFVJM 
 3. Waldney Pereira Martins - Prof. Unimontes
+4. Fabiano Rodrigues de Melo - Prof. UFV
